@@ -23,7 +23,7 @@
         <td>{{acc.accountName}}</td>
         <td>{{acc.accountStatus}}</td>  
         <td>{{acc.accountBalance  | currency:'INR'}}</td>
-        <td>{{acc.createdDt}}</td>
+        <td>{{acc.createdDt | date: 'dd-MM-yyyy'}}</td>
         <td>{{acc.lastUpdated}}</td>
         <td>{{acc.customer.customerId}}</td>
        </tr>

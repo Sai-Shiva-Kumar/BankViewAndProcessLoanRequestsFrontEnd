@@ -20,7 +20,7 @@
         <td>{{lr.loanType}}</td>
         <td>{{lr.loanTenure}}</td>
         <td>{{lr.reqStatus}}</td>
-        <td>{{lr.dateOfRequest}}</td>
+        <td>{{lr.dateOfRequest | date: 'dd-MM-yyyy'}}</td>
         <td>{{lr.annualIncome | currency:'INR'}}</td>
         <td>{{lr.customer.customerId}}</td>
         <td><a class="btn btn-success text-light" (click)="processLoan(lr)">Process</a></td>

@@ -45,7 +45,7 @@ export class LoanService {
     postData.append('userid' , userId);
     postData.append('password' , pwd);
 
-    return this.http.post("http://localhost:7082/adminlogin/login",postData, {responseType:'text'});
+    return this.http.post("http://localhost:7082/login/login",postData, {responseType:'text'});
   }
 
   decrypt(token: string):string {
@@ -69,7 +69,7 @@ public doLogout(){
   let utoken = localStorage.getItem("token");
   if(utoken == null) utoken="";
   const httpHeaders = new HttpHeaders({"tokenid": utoken});
-  return this.http.get("http://localhost:7082/adminlogin/logout",
+  return this.http.get("http://localhost:7082/login/logout",
                           {headers:httpHeaders,responseType:'text'});
 }
 
