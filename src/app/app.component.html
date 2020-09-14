@@ -7,13 +7,18 @@
       <a class="nav-item nav-link text-dark" routerLink="/adminlogin"><button type="button" class="btn btn-info">Login</button></a>
   </span> 
   
-    <span *ngIf="loginflag"> <span class="col-md-8 text-left">Hi {{userName|titlecase}}</span><a class="nav-item nav-link text-dark" (click)="logout()" routerLink="/adminlogin"><button type="button" class="btn btn-danger">Logout</button></a>
+    <span *ngIf="loginflag"> <span class="col-md-8 text-left">Hi {{userName|titlecase}}</span>
+    <a class="nav-item nav-link text-dark" (click)="logout()" routerLink="/adminlogin">
+                       <button type="button" class="btn btn-danger">Logout</button></a>
     </span>
   </div>
 </header>
 
 <nav class="col-md-10 mx-auto bg-dark p-2 row ">
-  <a class="nav-item nav-link text-light" *ngIf="loginflag"  routerLink="/Loan"><button type="button" class="btn btn-info">Loan</button></a>
+  <a class="nav-item nav-link text-light" *ngIf="loginflag"  routerLink="/Loan">
+                                       <button type="button" class="btn btn-info">Processed Loan requests</button></a>
+  <a class="nav-item nav-link text-light"  *ngIf="loginflag && role=='admin'" routerLink="/viewandprocessloanrequest">
+                                      <button type="button" class="btn btn-info">View and process loan requests</button></a>
 </nav>
 
 

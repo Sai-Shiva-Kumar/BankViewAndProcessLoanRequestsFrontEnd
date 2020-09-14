@@ -43,7 +43,7 @@ export class LoanService {
   public doLogin(userId:string, pwd:string):Observable<any>{
     let postData = new FormData();
     postData.append('userid' , userId);
-    postData.append('password' , pwd);
+    postData.append('password' , this.encrypt(pwd));
 
     return this.http.post("http://localhost:7082/login/login",postData, {responseType:'text'});
   }
